@@ -1,0 +1,17 @@
+<section id="content">
+    <div class="leftcolumn">
+        <c:forEach var="item" items="${PostDB.select()}">
+            <div class="card">
+                <h2>
+                    <a href="<c:url value='/posts/viewPost?todo=view&title=${item.title}&content=${item.content}&dateCreated=${item.dateCreated}'/>">
+                        ${item.title}
+                    </a>
+                </h2>
+                <h5>${item.dateCreated} </h5>
+                <!--                <div class="fakeimg" style="height:200px;">Image</div>-->
+                <p id="postContent">${item.content}</p>
+            </div>
+        </c:forEach>
+
+    </div>
+</section>

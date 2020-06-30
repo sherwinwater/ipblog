@@ -1,0 +1,44 @@
+<aside id="asideright">
+
+    <div class="rightcolumn">
+        <div class="card">
+            <h2>About Me</h2>
+            <div class="fakeimg" style="height:150px; padding: 0">
+                <img th:src="@{/static/images/peng.jpeg}"
+                     style="height:150px;margin: 0"></div>
+            <p>welcome to my blog</p>
+        </div>
+        <div class="card">
+            <h3>Popular Post</h3>
+            <div class="fakeimg">Image</div><br>
+            <div class="fakeimg">Image</div><br>
+            <div class="fakeimg">Image</div>
+        </div>
+        <div class="card">
+            <h3>Follow Me</h3>
+            <p>Some text..</p>
+        </div>
+
+        <div class="card">
+            <div style="text-align:left">
+                <h2>Contact Us</h2>
+                <p>Swing by for a cup of coffee, or leave us a message:</p>
+                <div class="column">
+                    <form action="#" method="get" onsubmit="insertMessage();return false">
+                        <input type="text" id="fname" name="firstname" placeholder="First name" style="width: 50%">
+                        <input type="text" id="lname" name="lastname" placeholder="Last name" style="width: 50%">
+                        <input type="email" id="email" name="email" placeholder="Email" style="width: 50%"><br>
+
+                        <label for="message">Message</label><br>
+                        <textarea id="message" name="message" placeholder="Write something.." style="height:50px; width: 100%" >
+
+                        </textarea><br>
+                        <input type="submit" value="Submit">
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</aside>
