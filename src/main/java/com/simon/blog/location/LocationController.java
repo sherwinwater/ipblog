@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 public class LocationController {
@@ -17,7 +18,7 @@ public class LocationController {
     }
 
     @RequestMapping(value = "/locations/{id}")
-    public Location getLocation(@PathVariable String id) {
+    public Optional<Location> getLocation(@PathVariable String id) {
         return locationService.getLocation(id);
     }
 
