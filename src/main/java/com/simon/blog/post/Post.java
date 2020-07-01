@@ -2,7 +2,12 @@ package com.simon.blog.post;
 
 import com.simon.blog.user.User;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class Post {
+    @Id
     private String id;
     private String postdate;
     private User user;

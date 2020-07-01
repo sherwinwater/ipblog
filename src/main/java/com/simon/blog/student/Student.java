@@ -1,21 +1,24 @@
-package com.simon.blog.location;
+package com.simon.blog.student;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
-public class Location {
+public class Student {
+
     @Id
     private String id;
     private String name;
+    private String department;
 
-    public Location() {
+    public Student() {
     }
 
-    public Location(String id, String name) {
+    public Student(String id, String name, String department) {
         super();
         this.id = id;
         this.name = name;
+        this.department = department;
     }
 
     public String getId() {
@@ -32,5 +35,13 @@ public class Location {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getDepartment() {
+        return department;
+    }
+
+    public void setDepartment(String department) {
+        this.department = department;
     }
 }

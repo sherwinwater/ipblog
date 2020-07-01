@@ -2,7 +2,12 @@ package com.simon.blog.user;
 
 import com.simon.blog.location.Location;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class User {
+    @Id
     private String id;
     private String firstname;
     private String lastname;
