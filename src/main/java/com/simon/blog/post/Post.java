@@ -4,12 +4,15 @@ import com.simon.blog.user.User;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Post {
     @Id
     private String id;
     private String postdate;
+
+    @ManyToOne
     private User user;
     private String details;
 
