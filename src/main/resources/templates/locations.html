@@ -10,9 +10,15 @@
 </head>
 
 <div th:replace="~{includes/header:: #header}"></div>
-<!--<div th:replace="~{content:: #content}"></div>-->
-<!--<div th:replace="~{asideright:: #asideright}"></div>-->
-<!--<div th:replace="~{footer:: #footer}"></div>-->
+<div th:replace="~{includes/content:: #content}"></div>
+<div th:replace="~{includes/asideright:: #asideright}"></div>
+<div th:replace="~{includes/footer:: #footer}"></div>
+
+<ul>
+    <li th:each="location : ${locations}">
+        <span th:text="${location.name}">Default</span>
+    </li>
+</ul>
 
 <p onclick="getNum()">click me</p>
 <script type="text/javascript" th:src="@{/js/main.js}"></script>

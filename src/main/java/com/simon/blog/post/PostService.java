@@ -2,6 +2,7 @@ package com.simon.blog.post;
 
 import com.simon.blog.location.Location;
 import com.simon.blog.user.User;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -13,11 +14,11 @@ import java.util.Optional;
 @Service
 public class PostService {
 
+    @Autowired
     private PostRepository postRepository;
 
     public List<Post> getAllPosts() {
         List<Post> posts = new ArrayList<>();
-
         postRepository.findAll()
                 .forEach(posts::add);
 

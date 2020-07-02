@@ -38,6 +38,19 @@ public class UserService {
     public void deleteUser(String id) {
         userRepository.deleteById(id);
     }
+
+    public List<User> getUsersByLocationId(String id) {
+        return userRepository.findByLocationId(id);
+    }
+
+    public List<User> getUsersByFirstname(String firstname) {
+        return userRepository.findByFirstname(firstname);
+    }
+
+    public List<User> getUsersByFirstnameLike(String firstname) {
+        return userRepository.findByFirstnameLike(firstname);
+    }
+
 }
 
 // method 2

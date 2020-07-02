@@ -38,6 +38,22 @@ public class UserController {
     public void getUser(@PathVariable String id, @RequestBody User user) {
         userService.updateUser(id, user);
     }
+
+    @RequestMapping("/users/location/{id}")
+    public List<User> getUsersByLocationId(@PathVariable String id){
+        return userService.getUsersByLocationId(id);
+    }
+
+    @RequestMapping("/users/firstname/{firstname}")
+    public List<User> getUsersByFirstname(@PathVariable String firstname){
+        return userService.getUsersByFirstname(firstname);
+    }
+
+    @RequestMapping("/users/firstname/like/{firstname}")  // not work as %firstname%
+    public List<User> getUsersByFirstnameLike(@PathVariable String firstname){
+        return userService.getUsersByFirstnameLike(firstname);
+    }
+
 }
 
 

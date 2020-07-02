@@ -1,13 +1,13 @@
 ----------------------------------------------------------------
-Tue Jun 30 23:25:19 EDT 2020:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance a816c00e-0173-0868-4ad2-000001ea2400 
-on database directory memory:/Users/leepeng/Documents/sherwinProjects/sherwinWeb/Spring/ipbloggit/863fa119-dd09-43a8-ab42-aaca25ad86a1 with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@3d4eac69 
-Loaded from file:/Users/leepeng/.m2/repository/org/apache/derby/derby/10.14.2.0/derby-10.14.2.0.jar
+Wed Jul 01 09:14:09 EDT 2020:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance a816c00e-0173-0a83-61b2-000002676d18 
+on database directory memory:/Users/sherwin/Documents/sherwinMacAir/sherwinProjects/sherwinWeb/Spring/ipblog/9b378857-70ba-43be-90f2-697ca373c83a with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@3d4eac69 
+Loaded from file:/Users/sherwin/.m2/repository/org/apache/derby/derby/10.14.2.0/derby-10.14.2.0.jar
 java.vendor=Oracle Corporation
-java.runtime.version=14+36-1461
-user.dir=/Users/leepeng/Documents/sherwinProjects/sherwinWeb/Spring/ipbloggit
+java.runtime.version=13.0.1+9
+user.dir=/Users/sherwin/Documents/sherwinMacAir/sherwinProjects/sherwinWeb/Spring/ipblog
 os.name=Mac OS X
 os.arch=x86_64
-os.version=10.14.6
+os.version=10.15.5
 derby.system.home=null
 Database Class Loader started - derby.database.classpath=''

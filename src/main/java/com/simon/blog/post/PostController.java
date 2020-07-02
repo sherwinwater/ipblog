@@ -1,6 +1,8 @@
 package com.simon.blog.post;
 
+import com.simon.blog.location.Location;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -16,6 +18,7 @@ public class PostController {
     public List<Post> getAllPosts() {
         return postService.getAllPosts();
     }
+
 
     @RequestMapping(value = "/posts/{id}")
     public Optional<Post> getPost(@PathVariable String id) {

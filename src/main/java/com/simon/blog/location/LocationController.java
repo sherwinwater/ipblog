@@ -1,20 +1,28 @@
 package com.simon.blog.location;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
 
-@RestController
+//@RestController
+@Controller
 public class LocationController {
 
     @Autowired
     private LocationService locationService;
 
     @RequestMapping(value = "/locations")
-    public List<Location> getAllLocations() {
-        return locationService.getAllLocations();
+//    public List<Location> getAllLocations() {
+//        return locationService.getAllLocations();
+//    }
+    public String getAllLocations(Model model) {
+        List<Location> locations = locationService.getAllLocations();
+        model.addAttribute("locations",locations);
+        return "locations";
     }
 
     @RequestMapping(value = "/locations/{id}")

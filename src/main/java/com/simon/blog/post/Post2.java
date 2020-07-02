@@ -7,18 +7,22 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
 @Entity
-public class Post {
+public class Post2 {
     @Id
     private String id;
     private String postdate;
+
+    @ManyToOne
+    private User user;
     private String details;
 
-    public Post() {
+    public Post2() {
     }
 
-    public Post(String id, String postdate,  String details) {
+    public Post2(String id, String postdate, User user, String details) {
         this.id = id;
         this.postdate = postdate;
+        this.user = user;
         this.details = details;
     }
 
@@ -36,6 +40,14 @@ public class Post {
 
     public void setPostdate(String postdate) {
         this.postdate = postdate;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 
     public String getDetails() {
