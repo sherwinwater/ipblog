@@ -1,9 +1,7 @@
 package com.simon.blog.controllers;
 
-import com.simon.blog.location.Location;
-import com.simon.blog.location.LocationService;
+
 import com.simon.blog.post.Post;
-import com.simon.blog.post.PostRepository;
 import com.simon.blog.post.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -26,29 +24,9 @@ public class HomeController {
         return "index";
     }
 
-    @GetMapping("/includes/header")
-    public String getHeader() {
-        return "includes/header";
-    }
-
-    @GetMapping("/includes/footer")
-    public String getFooter() {
-        return "includes/footer";
-    }
-
-    @GetMapping("/includes/content")
-    public String getContent() {
-        return "includes/content";
-    }
-
-    @GetMapping("/includes/aside")
-    public String getAside() {
-        return "includes/asideright";
-    }
-
     @GetMapping("/posts/new")
     public String createNewPost() {
-        return "posts/new";
+        return "posts/index";
     }
 
     @PostMapping("/posts/new")

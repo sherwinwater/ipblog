@@ -1,4 +1,4 @@
-package com.example.securingweb;
+package com.simon.blog.controllers;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -17,7 +17,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity http) throws Exception {
 		http
 			.authorizeRequests()
-				.antMatchers("/", "/home").permitAll()
+				.antMatchers( "/","/includes/n**","/user/**",
+						"/css/**","/js/**","/images/**").permitAll()
 				.anyRequest().authenticated()
 				.and()
 			.formLogin()
@@ -33,8 +34,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	public UserDetailsService userDetailsService() {
 		UserDetails user =
 			 User.withDefaultPasswordEncoder()
-				.username("user")
-				.password("password")
+				.username("sam")
+				.password("sam")
 				.roles("USER")
 				.build();
 
