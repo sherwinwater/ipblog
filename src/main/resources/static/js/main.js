@@ -1,19 +1,25 @@
-let fname = document.getElementById('fname').value;
-let lname = document.getElementById('lname').value;
-let email = document.getElementById('email').value;
-let message = document.getElementById('message').value;
-let message1 = document.getElementById('message1');
+const ajaxsearch = document.getElementById("ajaxsearch");
+const postlist = document.getElementById("postlist");
 
-async function insertMessage() {
-    let page = "Blog?todo=insert&fname=" + fname + "&lname=" + lname + "&email=" + email + "&message=" + message;
-    console.log(message);
-    // populate data to db
+ajaxsearch.addEventListener("keyup", () => {
+    showSearchResults("/posts/search/" + ajaxsearch.value);
+    console.log(ajaxsearch.value);
+});
+
+async function showSearchResults(page) {
     let response = await fetch(page);
     let data = await response.json();
-    message1.innerHTML = data.message;
-
+    showResults(data);
 }
 
-function getNum() {
-    console.log("js");
+function showResults(data) {
+    console.log(data);
+    postlist.innerHTML = "";
+    for (let item of data) {
+        postlist.innerHTML += `<div class="card">
+                                <h2>${item.title}</h2>
+                                <h5>${item.postdate}</h5>
+                                <p id="postContent"> ${item.details}</p>
+                                </div>`;
+    }
 }

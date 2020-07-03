@@ -2,31 +2,32 @@ package com.simon.blog.post;
 
 import com.simon.blog.user.User;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 
 @Entity
 public class Post {
     @Id
-    private String id;
-    private String postdate;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private int id;
+
+    private String title;
     private String details;
+    private String postdate;
 
     public Post() {
     }
 
-    public Post(String id, String postdate,  String details) {
-        this.id = id;
-        this.postdate = postdate;
+    public Post(String title, String details,String postdate) {
+        this.title = title;
         this.details = details;
+        this.postdate = postdate;
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -44,5 +45,23 @@ public class Post {
 
     public void setDetails(String details) {
         this.details = details;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    @Override
+    public String toString() {
+        return "Post{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", details='" + details + '\'' +
+                ", postdate='" + postdate + '\'' +
+                '}';
     }
 }

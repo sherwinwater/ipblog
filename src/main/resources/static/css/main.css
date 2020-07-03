@@ -4,7 +4,7 @@
 
 /* Add a gray background color with some padding */
 body {
-    font-family: "Avenir Next", Helvetica, Arial, sans-serif;
+    font-family: 'DM Sans', sans-serif;
     padding: 20px;
     background: #2B2B2B;
     /*background: rgb(102,97,103);*/
@@ -16,6 +16,7 @@ body {
 
 /* Header/Blog Title */
 .header {
+    font-family: 'Inter', sans-serif;
     /*padding: 2px;*/
     font-size: 20px;
     text-align: center;
@@ -56,8 +57,8 @@ body {
 /* Add a card effect for articles */
 .card {
     /*background-color: white;*/
-    padding: 20px;
-    margin-top: 20px;
+    padding: 10px;
+    margin-top: 10px;
     background: rgb(0,135,156);
 }
 h2,h3{
@@ -115,6 +116,15 @@ h2,h3{
 #nav_bar li a{
     color: wheat;
 
+}
+
+#nav_bar form{
+    display: inline;
+    float: left;
+    margin-left: -40px;
+}
+#nav_bar input[type="search"]{
+    width: 300px;
 }
 
 a:link {

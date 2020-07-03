@@ -4,9 +4,9 @@
 <div th:replace="~{includes/header:: #header}"></div>
 
 <section id="content">
-    <div class="leftcolumn">
-        <div class="card" th:each="post : ${posts}">
-            <h2 th:text="${post.id}"></h2>
+    <div class="leftcolumn" id="postlist">
+        <div class="card" th:each="post : ${posts}" >
+            <h2 th:text="${post.title}"></h2>
             <h5 th:text="${post.postdate}"></h5>
             <p id="postContent" th:text="${post.details}"></p>
         </div>

@@ -2,6 +2,8 @@ package com.simon.blog.post;
 
 import com.simon.blog.location.Location;
 import com.simon.blog.user.User;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,6 +15,7 @@ import java.util.Optional;
 // JPA
 @Service
 public class PostService {
+    private static final Logger log = LoggerFactory.getLogger(PostService.class);
 
     @Autowired
     private PostRepository postRepository;
@@ -25,7 +28,31 @@ public class PostService {
         return posts;
     }
 
-    public Optional<Post> getPost(String id) {
+    public List<Post> getAllPostsByTitle(String title) {
+        List<Post> posts = new ArrayList<>();
+        postRepository.findByTitleContainingOrderById(title)
+                .forEach(posts::add);
+
+        return posts;
+    }
+
+    public List<Post> getAllPostsByContent(String content) {
+        List<Post> posts = new ArrayList<>();
+//        postRepository.findByTitleOrDetailsContainingOrderById(content,content)
+//                .forEach(posts::add);
+
+//        postRepository.findByTitleContainingOrderById(content).forEach(posts::add);
+//        postRepository.findByDetailsContainingOrderById(content).forEach(posts::add);
+//         postRepository.findByTitleOrDetailsContainingOrderById(content,content).forEach(posts::add);
+         postRepository.findByDetailsOrTitleContaining(content,content).forEach(posts::add);
+         for(Post post : posts){
+             log.info(post.toString());
+         }
+
+        return posts;
+    }
+
+    public Optional<Post> getPost(int id) {
         return postRepository.findById(id);
     }
 
@@ -37,7 +64,7 @@ public class PostService {
         postRepository.save(post);
     }
 
-    public void deletePost(String id) {
+    public void deletePost(int id) {
         postRepository.deleteById(id);
     }
 }

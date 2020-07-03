@@ -1,12 +1,21 @@
 <div id="header">
     <body>
     <header class="header">
-        <h2><a th:href="@{/}">管豹一斑</a></h2>
+<!--        <h2><a th:href="@{/}">管豹一斑</a></h2>-->
         <h2><a th:href="@{/}">IP Spots Observations</a></h2>
     </header>
 
     <nav id="nav_bar">
         <ul>
+            <li>
+            <form th:action="@{/posts/search}" method="get" id="searchform">
+                <input type="search" placeholder="search..." name="title">
+                <input type="submit" value="go"/>
+            </form>
+            </li>
+            <li>
+                <input type="search" name="ajaxsearch" id="ajaxsearch" style="width: 100px">
+            </li>
             <li><a th:href="@{/posts/new}">Post</a></li>
             <li><a th:href="@{/login}">Login</a></li>
         </ul>
