@@ -1,7 +1,5 @@
 package com.simon.blog.post;
 
-import com.simon.blog.user.User;
-
 import javax.persistence.*;
 
 @Entity

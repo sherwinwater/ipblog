@@ -1,7 +1,5 @@
 package com.simon.blog.post;
 
-import com.simon.blog.location.Location;
-import com.simon.blog.user.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
