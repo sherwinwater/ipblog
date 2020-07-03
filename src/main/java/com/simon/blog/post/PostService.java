@@ -44,7 +44,8 @@ public class PostService {
 //        postRepository.findByTitleContainingOrderById(content).forEach(posts::add);
 //        postRepository.findByDetailsContainingOrderById(content).forEach(posts::add);
 //         postRepository.findByTitleOrDetailsContainingOrderById(content,content).forEach(posts::add);
-         postRepository.findByDetailsOrTitleContaining(content,content).forEach(posts::add);
+//         postRepository.findByDetailsOrTitleContaining(content,content).forEach(posts::add);
+         posts = postRepository.findByDetailsOrTitleContaining(content,content);
          for(Post post : posts){
              log.info(post.toString());
          }
