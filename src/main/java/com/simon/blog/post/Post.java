@@ -6,7 +6,7 @@ import javax.persistence.*;
 public class Post {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+    private Integer id;    // not int
 
     private String title;
     private String details;
