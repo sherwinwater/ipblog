@@ -51,7 +51,7 @@ public class PostService {
         return posts;
     }
 
-    public Optional<Post> getPost(int id) {
+    public Optional<Post> getPost(Integer id) {
         return postRepository.findById(id);
     }
 
@@ -59,11 +59,11 @@ public class PostService {
         postRepository.save(post);
     }
 
-    public void updatePost(String id, Post post) {
+    public void updatePost(Integer id, Post post) {
         postRepository.save(post);
     }
 
-    public void deletePost(int id) {
+    public void deletePost(Integer id) {
         postRepository.deleteById(id);
     }
 }

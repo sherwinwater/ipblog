@@ -25,7 +25,7 @@ public class PostController {
     }
 
     @RequestMapping(value = "/posts/{id}")
-    public Optional<Post> getPost(@PathVariable int id) {
+    public Optional<Post> getPost(@PathVariable Integer id) {
         return postService.getPost(id);
     }
 
@@ -35,12 +35,12 @@ public class PostController {
     }
 
     @RequestMapping(value = "/posts/{id}", method = RequestMethod.DELETE)
-    public void deletePost(@PathVariable int id) {
+    public void deletePost(@PathVariable Integer id) {
         postService.deletePost(id);
     }
 
     @RequestMapping(value="/posts/{id}", method = RequestMethod.PUT)
-    public void updatePost(@PathVariable String id, @RequestBody Post post) {
+    public void updatePost(@PathVariable Integer id, @RequestBody Post post) {
 
         postService.updatePost(id, post);
 
