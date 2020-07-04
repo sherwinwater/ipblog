@@ -36,14 +36,14 @@ public class PostService {
 
     public List<Post> getAllPostsByContent(String content) {
         List<Post> posts = new ArrayList<>();
-//        postRepository.findByTitleOrDetailsContainingOrderById(content,content)
+//        postRepository.findByTitleOrContentContainingOrderById(content,content)
 //                .forEach(posts::add);
 
 //        postRepository.findByTitleContainingOrderById(content).forEach(posts::add);
-//        postRepository.findByDetailsContainingOrderById(content).forEach(posts::add);
-//         postRepository.findByTitleOrDetailsContainingOrderById(content,content).forEach(posts::add);
-//         postRepository.findByDetailsOrTitleContaining(content,content).forEach(posts::add);
-         posts = postRepository.findByDetailsOrTitleContaining(content,content);
+//        postRepository.findByContentContainingOrderById(content).forEach(posts::add);
+//         postRepository.findByTitleOrContentContainingOrderById(content,content).forEach(posts::add);
+//         postRepository.findByContentOrTitleContaining(content,content).forEach(posts::add);
+         posts = postRepository.findByContentOrTitleContaining(content,content);
          for(Post post : posts){
              log.info(post.toString());
          }

@@ -19,7 +19,7 @@ function showResults(data) {
         postlist.innerHTML += `<div class="card">
                                 <h2>${item.title}</h2>
                                 <h5>${item.postdate}</h5>
-                                <p id="postContent"> ${item.details}</p>
+                                <p id="postContent"> ${item.content}</p>
                                 </div>`;
     }
 }
