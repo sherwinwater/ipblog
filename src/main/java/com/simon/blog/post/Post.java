@@ -21,7 +21,7 @@ public class Post {
         this.postdate = postdate;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
