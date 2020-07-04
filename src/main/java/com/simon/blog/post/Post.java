@@ -55,11 +55,8 @@ public class Post {
 
     @Override
     public String toString() {
-        return "Post{" +
-                "id=" + id +
-                ", title='" + title + '\'' +
-                ", details='" + details + '\'' +
-                ", postdate='" + postdate + '\'' +
-                '}';
+        return String.format(
+                "Customer[id=%d, title='%s', details='%s', postdate='%s']",
+                id, title,details,postdate);
     }
 }
