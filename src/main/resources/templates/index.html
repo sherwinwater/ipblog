@@ -10,14 +10,12 @@
             <form th:action="@{/posts/}+${post.id}" method="post" >
 <!--            <form th:action="@{/posts/{path}(path=${post.id})}" method="post" >-->
                 <input type="hidden" name="id" th:value="${post.id}">
-                <div class="card-header" th:text="${post.title}">Header</div>
+                <div class="card-header" th:text="${post.title}"></div>
                 <div class="card-body text-dark">
-                    <h5 class="card-title" th:text="${post.postdate}">Dark card title</h5>
-                    <h5 class="card-title" th:text="${post.id}">Dark card title</h5>
-                    <p class="card-text" th:utext="${post.content}">Some quick example text to build on the card title
-                        and make up the bulk of the card's content.</p>
+                    <h5 class="card-title" th:text="${post.postdate}"></h5>
+                    <h5 class="card-title" th:text="${post.id}"></h5>
+                    <p class="card-text" th:utext="${post.content}"></p>
                     <a href="#" class="btn btn-info">Read More</a>
-<!--                    <a th:href="@{/posts/index}" class="btn btn-link">Edit</a>-->
                 </div>
                 <input type="submit" value="Edit" class="btn btn-link">
             </form>

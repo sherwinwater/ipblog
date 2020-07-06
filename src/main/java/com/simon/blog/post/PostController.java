@@ -34,10 +34,11 @@ public class PostController {
         postService.addPost(post);
     }
 
-    @RequestMapping(value = "/posts/{id}", method = RequestMethod.DELETE)
-    public void deletePost(@PathVariable Integer id) {
-        postService.deletePost(id);
-    }
+//    @RequestMapping(value = "/posts/{id}", method = RequestMethod.DELETE)
+//    public void deletePost(@PathVariable Integer id) {
+//        System.out.println("delete----");
+//        postService.deletePost(id);
+//    }
 
     @RequestMapping(value="/posts/{id}", method = RequestMethod.PUT)
     public void updatePost(@PathVariable Integer id, @RequestBody Post post) {

@@ -19,8 +19,10 @@
                   style="height:40vh;width: 100%" th:utext="${post.content}"></textarea><br>
         <input type="submit" value="Publish">
     </form>
-    <a th:href="@{/posts/newpost}" class="btn btn-link">Return</a>
-    <a th:href="@{/posts/newpost}" class="btn btn-link">Delete</a>
+    <form method="get" onsubmit="deletePost();return false">
+        <input type="hidden" id="post_id_delete" name="id" th:value="${post.id}">
+        <input type="submit" value="Delete" >
+    </form>
 
 </section>
 

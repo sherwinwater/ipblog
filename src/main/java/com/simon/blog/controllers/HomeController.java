@@ -62,20 +62,20 @@ public class HomeController {
     public String updatePost(@PathVariable Integer id,
                              Model model) {
 
-        log.info(String.valueOf(id));
-        System.out.println(String.valueOf(id));
         Optional<Post> postOptional = postService.getPost(id);
         Post post = postOptional.get();
-        log.info(post.toString());
-//        System.out.println("post " + post.toString());
-//        model.addAttribute("post", post);
-
-
-//        List<Post> posts = postService.getAllPosts();
-//        Post post = posts.get(0);
         model.addAttribute("post", post);
-
         return "posts/index";
+    }
+
+    @RequestMapping(value = "/posts/{id}", method = RequestMethod.DELETE)
+    public String deletePost(@PathVariable Integer id, Model model) {
+        System.out.println("delete----");
+        postService.deletePost(id);
+
+        List<Post> posts = postService.getAllPosts();
+        model.addAttribute("posts", posts);
+        return "index";
     }
 
 }
