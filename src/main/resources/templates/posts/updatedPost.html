@@ -2,31 +2,38 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <div th:replace="~{includes/head:: #head}"></div>
+
 <body>
 <div class="container">
     <div th:replace="~{includes/header:: #header}"></div>
 
     <section>
-        <form th:action="@{/posts/new}" method="post">
+        <form th:action="@{/posts/}+${post.id}" method="get">
 
-            <input type="hidden" name="todo" value="create">
+            <input type="hidden" name="action" value="update">
             <label>Title</label><br>
             <input type="text" id="title" name="title" placeholder="title"
-                   style="width: 100%"><br>
+                   style="width: 100%" th:value="${post.title}"><br>
             <label>Content</label><br>
             <textarea id="content" name="content" placeholder="Write something.."
-                      style="height:40vh;width: 100%"></textarea><br>
-            <input type="submit" value="Publish" class="btn btn-link">
+                      style="height:40vh;width: 100%" th:utext="${post.content}"></textarea><br>
+            <input type="submit" value="Update" class="btn btn-link">
+            <input type="reset" value="Reset" class="btn btn-link">
             <a th:href="@{/}" class="btn btn-link">Return</a>
+        </form>
+        <form method="get" th:action="@{/posts/}+${post.id}" style="display: inline">
+            <input type="hidden" name="action" value="delete">
+            <input type="submit" value="Delete" class="btn btn-info" style="display: inline">
         </form>
 
     </section>
 
     <div th:replace="~{includes/footer:: #footer}"></div>
+
     <script type="text/javascript" th:src="@{/js/main.js}"></script>
     <script>
         $('#content').summernote({
-            height: 200,
+            height: 200
         });
     </script>
 

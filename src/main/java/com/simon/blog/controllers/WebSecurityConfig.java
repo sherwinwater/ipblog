@@ -28,7 +28,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 			.logout()
 				.permitAll()
 		        .and()
-				.csrf().disable().cors();
+				.csrf().disable().cors();  // remove 403 error
 	}
 
 	@Bean

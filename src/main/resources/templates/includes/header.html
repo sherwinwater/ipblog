@@ -1,23 +1,23 @@
-<div id="header">
-    <body style="background-color: #2B2B2B;color: wheat">
-    <header class="header">
-<!--        <h2><a th:href="@{/}">管豹一斑</a></h2>-->
-        <h2><a th:href="@{/}">IP Spots Observations</a></h2>
-    </header>
-
-    <nav id="nav_bar">
-        <ul>
-            <li>
-            <form th:action="@{/posts/search}" method="get" id="searchform">
-                <input type="search" placeholder="search..." name="title">
-                <input type="submit" value="go"/>
+<header class="blog-header py-3" id="header">
+    <div class="row flex-nowrap justify-content-between align-items-center">
+        <div class="col-3.5 pt-1">
+<!--            <a class="text-muted" href="#">Subscribe</a>-->
+            <form th:action="@{/posts/search}" method="get" id="searchform" class="form-inline">
+                <input type="search" class="form-control mr-sm-2" placeholder="search..."
+                       name="title" aria-label="Search">
+                <button type="submit" class="btn btn-outline-success my-2 my-sm-0">
+                    <i class="fa fa-search" ></i></button>
             </form>
-            </li>
-            <li>
-                <input type="search" name="ajaxsearch" id="ajaxsearch" style="width: 100px">
-            </li>
-            <li><a th:href="@{/posts/new}">Publish New Post</a></li>
-            <li><a th:href="@{/login}">Login</a></li>
-        </ul>
-    </nav>
-</div>
+        </div>
+        <div class="col-5 text-center">
+            <a class="blog-header-logo text-dark" th:href="@{/}">管豹一斑<br>IP Spots Observations</a>
+        </div>
+        <div class="col-3.5 d-flex justify-content-end align-items-center">
+
+<!--            <input type="search" name="ajaxsearch" id="ajaxsearch" style="width: 100px">-->
+
+            <a class="btn btn-sm btn-outline-secondary" th:href="@{/posts/new}">Create Post</a>&nbsp;
+            <a class="btn btn-sm btn-outline-secondary" th:href="@{/login}">Sign In</a>
+        </div>
+    </div>
+</header>

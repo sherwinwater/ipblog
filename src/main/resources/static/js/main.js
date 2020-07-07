@@ -26,11 +26,21 @@ function showResults(data) {
     }
 }
 
-async function deletePost() {
-    const url = "/posts/"+post_id_delete.value;
-    // console.log(url);
-    const response = await fetch(url,{method:'DELETE',
-    mode:'cors',credentials:'same-origin'});
+async function deletePost(id) {
+    // const url = "/posts/"+post_id_delete.value;
+    const url = '/posts/' + id;
+    console.log(url);
+    await fetch(url, {
+        method: 'DELETE',
+        mode: 'cors', credentials: 'same-origin', redirect: 'follow'
+    }).then(function (response) {
+        console.log(response.url);
+        response.url = "http://localhost:8080/"
+        window.location.href = response.url;
+        if (response.redirected) {
+            // window.location.href = response.url;
+        }
+    });
 
     // const response = await fetch(url,{method:'GET'});
     // let data = await response.json();

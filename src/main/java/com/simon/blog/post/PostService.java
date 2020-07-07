@@ -60,7 +60,10 @@ public class PostService {
     }
 
     public void updatePost(Integer id, Post post) {
-        postRepository.save(post);
+        Post post1 = postRepository.findById(id).get();
+        post1.setTitle(post.getTitle());
+        post1.setContent(post.getContent());
+        postRepository.save(post1);
     }
 
     public void deletePost(Integer id) {

@@ -1,10 +1,12 @@
-<section id="content">
-    <div class="leftcolumn">
-        <div class="card" th:each="post : ${posts}">
-            <h2 th:text="${post.id}"></h2>
-            <h5 th:text="${post.postdate}"></h5>
-            <p id="postContent" th:text="${post.content}"></p>
-        </div>
 
-    </div>
-</section>
+<div class="blog-post" th:each="post : ${posts}" id="content" >
+    <form th:action="@{/posts/}+${post.id}" method="post">
+        <h2 class="blog-post-title" th:text="${post.title}">Another blog post</h2>
+        <p class="blog-post-meta" th:text="${post.postdate}">December 23, 2013 by <a href="#">Jacob</a>
+        </p>
+        <p th:utext="${post.content}">Cum sociis natoque penatibus et magnis <a href="#">dis parturient
+            montes</a>, nascetur ridiculusermentum.</p>
+        <a href="#" class="btn btn-link">Read More </a>
+        <input type="submit" value="Edit" class="btn btn-link" style="display: inline">
+    </form>
+</div><!-- /.blog-post -->

@@ -55,23 +55,33 @@ public class HomeController {
 
         List<Post> posts = postService.getAllPosts();
         model.addAttribute("posts", posts);
-        return "posts/newpost";
+        return "index";
     }
 
     @PostMapping("/posts/{id}")
-    public String updatePost(@PathVariable Integer id,
-                             Model model) {
+    public String getUpdatedPost(@PathVariable Integer id, Model model) {
 
         Optional<Post> postOptional = postService.getPost(id);
         Post post = postOptional.get();
         model.addAttribute("post", post);
-        return "posts/index";
+
+        return "posts/updatedPost";
     }
 
-    @RequestMapping(value = "/posts/{id}", method = RequestMethod.DELETE)
-    public String deletePost(@PathVariable Integer id, Model model) {
-        System.out.println("delete----");
-        postService.deletePost(id);
+    @GetMapping("/posts/{id}")
+    public String updatePost(@PathVariable Integer id,
+                             @RequestParam String action,
+                             @RequestParam(required = false) String title,
+                             @RequestParam(required = false) String content, Model model) {
+        if (action.equals("delete")) {
+            postService.deletePost(id);
+        }
+        if(action.equals("update")){
+            Post post = new Post();
+            post.setTitle(title);
+            post.setContent(content);
+            postService.updatePost(id,post);
+        }
 
         List<Post> posts = postService.getAllPosts();
         model.addAttribute("posts", posts);
