@@ -38,7 +38,7 @@ public class HomeController {
 
     @GetMapping("/post/new")
     public String createNewPost() {
-        return "/posts/newpost";
+        return "posts/newpost";
     }
 
     @PostMapping("/post/new")
