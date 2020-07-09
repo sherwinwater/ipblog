@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -59,33 +60,66 @@ public class HomeController {
     }
 
     @PostMapping("/posts/{id}")
-    public String getUpdatedPost(@PathVariable Integer id, Model model) {
+    public String getUpdatedPost(@PathVariable Integer id,
+                                 @RequestParam(required = false) String action,
+                                 @RequestParam(required = false) String title,
+                                 @RequestParam(required = false) String content,
+                                 Model model) {
+        if (action.equals("update")) {
+            Post post = new Post();
+            post.setTitle(title);
+            post.setContent(content);
+            postService.updatePost(id, post);
+            List<Post> posts = postService.getAllPosts();
+            model.addAttribute("posts", posts);
+            return "index";
+        }else if(action.equals("edit")){
+            Optional<Post> postOptional = postService.getPost(id);
+            Post post = postOptional.get();
+            model.addAttribute("post", post);
+            return "posts/updatedPost";
+        }else {
+            return "posts/updatedPost";
+        }
 
-        Optional<Post> postOptional = postService.getPost(id);
-        Post post = postOptional.get();
-        model.addAttribute("post", post);
-
-        return "posts/updatedPost";
     }
 
     @GetMapping("/posts/{id}")
     public String updatePost(@PathVariable Integer id,
-                             @RequestParam String action,
+                             @RequestParam(required = false) String action,
                              @RequestParam(required = false) String title,
-                             @RequestParam(required = false) String content, Model model) {
-        if (action.equals("delete")) {
-            postService.deletePost(id);
-        }
-        if(action.equals("update")){
-            Post post = new Post();
-            post.setTitle(title);
-            post.setContent(content);
-            postService.updatePost(id,post);
-        }
+                             @RequestParam(required = false) String content,
+                             Model model) {
+        if(action.equals("view")) {
+            Optional<Post> postOptional = postService.getPost(id);
+            Post post = postOptional.get();
+            model.addAttribute("posts", post);
+            return "posts/viewpost";
 
-        List<Post> posts = postService.getAllPosts();
-        model.addAttribute("posts", posts);
-        return "index";
+        }else if (action.equals("delete")) {
+            postService.deletePost(id);
+            List<Post> posts = postService.getAllPosts();
+            model.addAttribute("posts", posts);
+            return "index";
+
+        }else {
+            return "index";
+        }
     }
+
+//    @PostMapping("/login")
+//    public String getUser (@RequestParam String username,
+//                                   @RequestParam String password,
+//                                   HttpSession session,
+//                                   Model model) {
+//        if(username.equals("sam")&&password.equals("sam")){
+//            session.setAttribute("user", "sam");
+//            return "index";
+//        }else {
+//            return "user/login";
+//        }
+//
+//    }
+
 
 }

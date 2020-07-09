@@ -3,32 +3,42 @@
 
 <div th:replace="~{includes/head:: #head}"></div>
 <body>
-<div class="container">
-    <div th:replace="~{includes/header:: #header}"></div>
+<div th:replace="~{includes/header:: #header}"></div>
 
-    <section>
-        <form th:action="@{/posts/new}" method="post">
+<section>
+    <form th:action="@{/posts/new}" method="post">
 
-            <input type="hidden" name="todo" value="create">
-            <label>Title</label><br>
-            <input type="text" id="title" name="title" placeholder="title"
-                   style="width: 100%"><br>
-            <label>Content</label><br>
-            <textarea id="content" name="content" placeholder="Write something.."
-                      style="height:40vh;width: 100%"></textarea><br>
-            <input type="submit" value="Publish" class="btn btn-link">
-            <a th:href="@{/}" class="btn btn-link">Return</a>
-        </form>
+        <input type="hidden" name="todo" value="create">
+        <label>Title</label><br>
+        <input type="text" id="title" name="title" placeholder="title"
+               style="width: 100%"><br>
+        <label>Content</label><br>
+        <textarea id="summernote" name="content" placeholder="Write something.."
+                  style="height:40vh;width: 100%"></textarea><br>
+        <input type="submit" value="Publish" class="btn btn-link">
+        <a th:href="@{/}" class="btn btn-link">Return</a>
+    </form>
 
-    </section>
+</section>
 
-    <div th:replace="~{includes/footer:: #footer}"></div>
-    <script type="text/javascript" th:src="@{/js/main.js}"></script>
-    <script>
-        $('#content').summernote({
-            height: 200,
-        });
-    </script>
+<div th:replace="~{includes/footer:: #footer}"></div>
+<script type="text/javascript" th:src="@{/js/main.js}"></script>
+<script>
+    $('#summernote').summernote({
+        placeholder: 'Hello stand alone ui',
+        tabsize: 2,
+        height: 300,
+        toolbar: [
+            ['style', ['style']],
+            ['font', ['bold', 'underline', 'clear']],
+            ['color', ['color']],
+            ['para', ['ul', 'ol', 'paragraph']],
+            ['table', ['table']],
+            ['insert', ['link', 'picture', 'video']],
+            ['view', ['fullscreen', 'codeview', 'help']]
+        ]
+    });
+</script>
 
 </body>
 </html>

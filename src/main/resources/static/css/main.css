@@ -6,45 +6,91 @@
 body {
     font-family: 'DM Sans', sans-serif;
     padding: 20px;
-    background: #2B2B2B;
-    /*background: rgb(102,97,103);*/
-    /*background: rgb(241,242,247);*/
-    /*background: rgb(246,245,241);*/
     margin: 0;
-    color: wheat;
 }
 
 /* Header/Blog Title */
-.header {
-    font-family: 'Inter', sans-serif;
-    /*padding: 2px;*/
-    font-size: 20px;
-    text-align: center;
-    /*background: rgb(72,135,176);*/
-    height: 50px;
-    margin-top: -25px;
-    padding: 10px;
+/*.header {*/
+/*    font-family: 'Inter', sans-serif;*/
+/*    !*padding: 2px;*!*/
+/*    font-size: 20px;*/
+/*    text-align: center;*/
+/*    !*background: rgb(72,135,176);*!*/
+/*    height: 50px;*/
+/*    margin-top: -25px;*/
+/*    padding: 10px;*/
+/*}*/
+
+#header{
+    margin: -16px -14px 8px -14px;
+    line-height: 1;
+    border-bottom: 1px solid #e5e5e5;
+    padding: 1rem;
 }
-.header h2{
-    color: wheat;
-    font-weight: 600;
+
+#header a{
+    color: black;
 }
-.header a{
-    color: wheat;
+.blog-header-login a {
+    border: 1px solid #e5e5e5;
+    padding: 8px;
+    font-size: 80%;
+}
+.header-grid-container {
+    display: grid;
+    grid-template-columns: 25% 50% 25%;
+}
+.blog-header {
+    font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+    font-size: 1.5rem;
+}
+
+.font-italic {
+    font-style: italic;
+}
+
+.blog-home {
+    background-color: #353B40;
+    color: white;
+    padding: 15px 15px 15px 25px;
+    margin-bottom: 10px;
+}
+
+.blog-home h1 {
+    font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+    font-style: italic;
+    font-size: 2rem;
+
 }
 
 /* Create two unequal columns that floats next to each other */
 /* Left column */
 .leftcolumn {
     float: left;
-    width: 75%;
+    width: 70%;
+    /*border-right: #E2E4E8 2px solid;*/
 }
 
 /* Right column */
 .rightcolumn {
     float: right;
-    width: 25%;
+    width: 30%;
     padding-left: 20px;
+}
+
+/*aside*/
+#aside ul {
+    list-style-type: none;
+    padding-left: 0px;
+    margin-bottom: 5px;
+}
+
+#about, #archives, #follow, #subscribe {
+    border-bottom: #E2E4E8 1px solid;
+}
+
+.container {
+    margin-bottom: 5px;
 }
 
 /* Fake image */
@@ -59,9 +105,10 @@ body {
     /*background-color: white;*/
     padding: 10px;
     margin-top: 10px;
-    background: rgb(0,135,156);
+    background: rgb(0, 135, 156);
 }
-h2,h3{
+
+h2, h3 {
     font-weight: 500;
 }
 
@@ -73,14 +120,13 @@ h2,h3{
 }*/
 
 /* Footer */
-.footer {
-    padding: 20px;
+#footer {
+    padding: 0px;
     text-align: center;
     /*background: rgb(72,135,176);*/
-    margin-top: 20px;
-    color: white;
+    /*margin-top: 20px;*/
     clear: both;
-    border-top: 2px solid #ef9c00;
+    border-top: 1px solid #E2E4E8;
 
 }
 
@@ -102,34 +148,40 @@ h2,h3{
     border-bottom: 2px solid #ef9c00;
     text-align: right;
 }
+
 #nav_bar ul {
     margin-bottom: .5em;
     list-style: none;
     padding-top: .5em;
 }
+
 #nav_bar li {
     display: inline;
     padding: 0 0.7em;
     color: wheat;
     /*    border-left: 2px solid black;*/
 }
-#nav_bar li a{
-    color: wheat;
 
+#nav_bar li a {
+    color: wheat;
 }
 
-#nav_bar form{
+#nav_bar form {
     display: inline;
     float: left;
     margin-left: -40px;
 }
-#nav_bar input[type="search"]{
+
+#nav_bar input[type="search"] {
     width: 300px;
 }
 
 a:link {
     text-decoration: none;
-    color: wheat;
+    color: black;
+}
+a{
+    color: black;
 }
 
 #postContent {
@@ -138,15 +190,35 @@ a:link {
     overflow: hidden;
     text-overflow: ellipsis;
 }
-.leftcolumn{
+
+.leftcolumn {
     margin-bottom: 20px;
 }
 
+/*content*/
+#content {
+    border: 1px solid #E2E4E8;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+#content input {
+    background-color: white;
+    border: none;
+    color: blue;
+}
+
+#content input:hover {
+    cursor: pointer;
+}
+
+/*content*/
 
 .fa {
-    padding: 20px;
+    padding: 10px;
     font-size: 30px;
-    width: 50px;
+    width: 40px;
     text-align: center;
     text-decoration: none;
     margin: 5px 2px;
@@ -191,4 +263,9 @@ a:link {
     color: white;
 }
 
+/*login*/
+#loginform label{
+    display: inline-block;
+    width: 100px;
+}
 

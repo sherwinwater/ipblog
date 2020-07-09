@@ -1,12 +1,17 @@
+<article  th:each="post : ${posts}" id="content" class="blog-content">
 
-<div class="blog-post" th:each="post : ${posts}" id="content" >
-    <form th:action="@{/posts/}+${post.id}" method="post">
-        <h2 class="blog-post-title" th:text="${post.title}">Another blog post</h2>
-        <p class="blog-post-meta" th:text="${post.postdate}">December 23, 2013 by <a href="#">Jacob</a>
-        </p>
-        <p th:utext="${post.content}">Cum sociis natoque penatibus et magnis <a href="#">dis parturient
-            montes</a>, nascetur ridiculusermentum.</p>
-        <a href="#" class="btn btn-link">Read More </a>
-        <input type="submit" value="Edit" class="btn btn-link" style="display: inline">
+    <h2 class="blog-post-title" th:text="${post.title}"></h2>
+    <p class="blog-post-meta" th:text="${post.postdate}" style="font-size: 70%"></p>
+    <p th:utext="${post.content}"></p>
+
+    <form th:action="@{/posts/}+${post.id}" method="get" style="display:inline">
+        <input type="hidden" name="action" value="view">
+        <input type="submit" value="Read More" >
     </form>
-</div><!-- /.blog-post -->
+
+    <form th:action="@{/posts/}+${post.id}" method="post" style="display:inline">
+        <input type="hidden" name="action" value="edit">
+        <input type="submit" value="Edit" >
+    </form>
+
+</article>
