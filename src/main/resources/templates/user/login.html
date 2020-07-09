@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="https://www.thymeleaf.org">
-<div th:replace="~{includes/head:: #head}"></div>
+<div th:replace="includes/head:: #head"></div>
 <body>
 <div class="container">
-    <div th:replace="~{includes/header:: #header}"></div>
+    <div th:replace="includes/header:: #header"></div>
 
     <section>
         <div th:if="${param.error}">
@@ -26,7 +26,7 @@
 
 </div><!-- /.container -->
 
-<div th:replace="~{includes/footer:: #footer}"></div>
+<div th:replace="includes/footer:: #footer"></div>
 
 <script type="text/javascript" th:src="@{/js/main.js}"></script>
 </body>

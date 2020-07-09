@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 
-<div th:replace="~{includes/head:: #head}"></div>
+<div th:replace="includes/head:: #head"></div>
 
 <body>
 <div class="container">
-    <div th:replace="~{includes/header:: #header}"></div>
+    <div th:replace="includes/header:: #header"></div>
 
     <section>
         <form th:action="@{/posts/}+${post.id}" method="post">
@@ -28,7 +28,7 @@
 
     </section>
 
-    <div th:replace="~{includes/footer:: #footer}"></div>
+    <div th:replace="includes/footer:: #footer"></div>
 
     <script type="text/javascript" th:src="@{/js/main.js}"></script>
     <script>

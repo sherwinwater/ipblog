@@ -1,4 +1,4 @@
-<article  th:each="post : ${posts}" id="content" class="blog-content">
+<article  th:each="post : ${posts}" id="content" class="blog-content" th:fragment="content">
 
     <h2 class="blog-post-title" th:text="${post.title}"></h2>
     <p class="blog-post-meta" th:text="${post.postdate}" style="font-size: 70%"></p>
