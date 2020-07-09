@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<div th:replace="~{includes/head:: #head}"></div>
+<div th:replace="~{/includes/head:: #head}"></div>
 <body>
-<div th:replace="~{includes/header:: #header}"></div>
+<div th:replace="~{/includes/header:: #header}"></div>
 
 <div class="blog-home">
     <h1 class="font-italic">Title of a longer featured blog post</h1>
@@ -12,7 +12,7 @@
 
 <main class="container leftcolumn">
     <div id="postlist">
-        <div th:replace="~{includes/content:: #content}"></div>
+        <div th:replace="~{/includes/content:: #content}"></div>
     </div>
     <nav class="blog-pagination">
         <a class="btn btn-outline-primary" href="#">Older</a>
@@ -21,8 +21,8 @@
 
 </main><!-- /.container -->
 
-<div th:replace="~{includes/aside:: #aside}"></div>
-<div th:replace="~{includes/footer:: #footer}"></div>
+<div th:replace="~{/includes/aside:: #aside}"></div>
+<div th:replace="~{/includes/footer:: #footer}"></div>
 
 <script type="text/javascript" th:src="@{/js/main.js}"></script>
 </body>

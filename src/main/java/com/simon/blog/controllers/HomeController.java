@@ -9,7 +9,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -22,7 +21,7 @@ public class HomeController {
     @Autowired
     private PostService postService;
 
-    @GetMapping(value = {"/", "posts/newpost"})
+    @GetMapping(value = {"/"})
     public String getHomepage(Model model) {
         List<Post> posts = postService.getAllPosts();
         model.addAttribute("posts", posts);
@@ -37,17 +36,12 @@ public class HomeController {
         return "index";
     }
 
-    @GetMapping("/posts/new")
+    @GetMapping("/post/new")
     public String createNewPost() {
-        return "/posts/index";
+        return "/posts/newpost";
     }
 
-    @GetMapping("/posts/index")
-    public String editPost() {
-        return "/posts/index";
-    }
-
-    @PostMapping("/posts/new")
+    @PostMapping("/post/new")
     public String addPost(@RequestParam String title
             , @RequestParam String content, Model model) {
 

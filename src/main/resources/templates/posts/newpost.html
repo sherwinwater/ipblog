@@ -1,36 +1,44 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+
 <div th:replace="~{includes/head:: #head}"></div>
+<body>
 <div th:replace="~{includes/header:: #header}"></div>
 
-<section id="content">
-    <div class="leftcolumn" id="postlist">
+<section>
+    <form th:action="@{/post/new}" method="post">
 
-<!--        <div class="card" th:each="post : ${posts}" >-->
-<!--            <h2 th:text="${post.title}"></h2>-->
-<!--            <h5 th:text="${post.postdate}"></h5>-->
-<!--            <p id="postContent" th:utext="${post.content}"></p>-->
-<!--        </div>-->
-
-    <div class="card border-dark mb-3" style="max-width: 100%;" th:each="post : ${posts}">
-        <div class="card-header" th:text="${post.title}">Header</div>
-        <div class="card-body text-dark">
-            <h5 class="card-title" th:text="${post.postdate}">Dark card title</h5>
-            <p class="card-text" th:utext="${post.content}">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-info">Read More</a>
-            <a th:href="@{/posts/index}" class="btn btn-link">Edit</a>
-        </div>
-    </div>
-
-    </div>
-
+        <input type="hidden" name="todo" value="create">
+        <label>Title</label><br>
+        <input type="text" id="title" name="title" placeholder="title"
+               style="width: 100%"><br>
+        <label>Content</label><br>
+        <textarea id="summernote" name="content" placeholder="Write something.."
+                  style="height:40vh;width: 100%"></textarea><br>
+        <input type="submit" value="Publish" class="btn btn-link">
+        <a th:href="@{/}" class="btn btn-link">Return</a>
+    </form>
 
 </section>
 
-<div th:replace="~{includes/asideright:: #asideright}"></div>
 <div th:replace="~{includes/footer:: #footer}"></div>
-
-
 <script type="text/javascript" th:src="@{/static/js/main.js}"></script>
+<script>
+    $('#summernote').summernote({
+        placeholder: 'Hello stand alone ui',
+        tabsize: 2,
+        height: 300,
+        toolbar: [
+            ['style', ['style']],
+            ['font', ['bold', 'underline', 'clear']],
+            ['color', ['color']],
+            ['para', ['ul', 'ol', 'paragraph']],
+            ['table', ['table']],
+            ['insert', ['link', 'picture', 'video']],
+            ['view', ['fullscreen', 'codeview', 'help']]
+        ]
+    });
+</script>
+
 </body>
 </html>

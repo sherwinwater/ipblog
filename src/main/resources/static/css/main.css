@@ -196,20 +196,20 @@ a{
 }
 
 /*content*/
-#content {
+.blog-content {
     border: 1px solid #E2E4E8;
     border-radius: 10px;
     padding: 10px;
     margin-bottom: 10px;
 }
 
-#content input {
+.blog-content input {
     background-color: white;
     border: none;
     color: blue;
 }
 
-#content input:hover {
+.blog-content input:hover {
     cursor: pointer;
 }
 
