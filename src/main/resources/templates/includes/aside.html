@@ -1,7 +1,7 @@
 <aside id="aside" class="rightcolumn" th:fragment="aside">
     <div id="about">
         <div class="container">
-            <h2 >About</h2>
+            <h4 >About</h4>
             <p>Simon Li</p>
             <em>Canadian IP Patent/TradeMark Agent</em><br>
         </div>
@@ -9,7 +9,7 @@
 
     <div id="archives">
         <div class="container">
-            <h2 >Archives</h2>
+            <h4 >Archives</h4>
             <ul>
                 <li><a href="#">March 2014</a></li>
                 <li><a href="#">February 2014</a></li>
@@ -21,7 +21,7 @@
 
     <div id="follow">
         <div class="container">
-            <h2 >Follow Me</h2>
+            <h4 >Follow Me</h4>
             <ul style="display:flex;justify-content: flex-start">
                 <li><a href="#" class="fa fa-facebook"></a></li>
                 <li><a href="#" class="fa fa-twitter"></a></li>
@@ -35,11 +35,11 @@
 
     <div id="subscribe">
         <div >
-            <h2 >Subscribe</h2>
+            <h4 >Subscribe</h4>
             <form th:action="@{/}" method="get" id="emailform">
-                <input type="email" name="email" placeholder="email" autofocus/> </label>
+                <input type="email" name="email" placeholder="email" /> </label>
                 <input type="submit" value="Submit"
-                       style="border: none;background-color: #3B5A98;color: white"/>
+                       style="border: none;background-color: #ffffff;color: #9370db"/>
             </form>
         </div>
     </div>

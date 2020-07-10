@@ -1,17 +1,17 @@
-<article  th:each="post : ${posts}" id="content" class="blog-content" th:fragment="content">
+<article th:each="post : ${posts}" id="content" class="blog-content" th:fragment="content">
 
-    <h2 class="blog-post-title" th:text="${post.title}"></h2>
+    <h3 class="blog-post-title" th:text="${post.title}"></h3>
     <p class="blog-post-meta" th:text="${post.postdate}" style="font-size: 70%"></p>
-    <p th:utext="${post.content}"></p>
+    <p th:utext="${post.content}" class="blog-content-paragraph" th:max="10"></p>
 
     <form th:action="@{/posts/}+${post.id}" method="get" style="display:inline">
         <input type="hidden" name="action" value="view">
-        <input type="submit" value="Read More" >
+        <input type="submit" value="Read More">
     </form>
 
-    <form th:action="@{/posts/}+${post.id}" method="post" style="display:inline">
+    <form th:action="@{/post/}+${post.id}" method="post" style="display:inline">
         <input type="hidden" name="action" value="edit">
-        <input type="submit" value="Edit" >
+        <input type="submit" value="Edit">
     </form>
 
 </article>

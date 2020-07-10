@@ -8,7 +8,7 @@
     <div th:replace="includes/header:: #header"></div>
 
     <section>
-        <form th:action="@{/posts/}+${post.id}" method="post">
+        <form th:action="@{/post/}+${post.id}" method="post">
 
             <input type="hidden" name="action" value="update">
             <label>Title</label><br>
@@ -21,7 +21,7 @@
             <input type="reset" value="Reset" class="btn btn-link">
             <a th:href="@{/}" class="btn btn-link">Return</a>
         </form>
-        <form method="get" th:action="@{/posts/}+${post.id}" style="display: inline">
+        <form method="get" th:action="@{/post/}+${post.id}" style="display: inline">
             <input type="hidden" name="action" value="delete">
             <input type="submit" value="Delete" class="btn btn-info" style="display: inline">
         </form>

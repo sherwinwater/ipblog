@@ -53,7 +53,7 @@ public class HomeController {
         return "index";
     }
 
-    @PostMapping("/posts/{id}")
+    @PostMapping("/post/{id}")
     public String getUpdatedPost(@PathVariable Integer id,
                                  @RequestParam(required = false) String action,
                                  @RequestParam(required = false) String title,

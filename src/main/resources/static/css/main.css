@@ -60,7 +60,13 @@ body {
     font-family: "Playfair Display", Georgia, "Times New Roman", serif;
     font-style: italic;
     font-size: 2rem;
+}
 
+.blog-content-paragraph{
+    width: 20ch;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 /* Create two unequal columns that floats next to each other */
@@ -205,7 +211,7 @@ a{
 .blog-content input {
     background-color: white;
     border: none;
-    color: blue;
+    color: mediumpurple;
 }
 
 .blog-content input:hover {
