@@ -21,7 +21,7 @@
             <input type="reset" value="Reset" class="btn btn-link">
             <a th:href="@{/}" class="btn btn-link">Return</a>
         </form>
-        <form method="get" th:action="@{/post/}+${post.id}" style="display: inline">
+        <form method="post" th:action="@{/post/}+${post.id}" style="display: inline">
             <input type="hidden" name="action" value="delete">
             <input type="submit" value="Delete" class="btn btn-info" style="display: inline">
         </form>

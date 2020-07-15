@@ -21,7 +21,7 @@ public class HomeController {
     @Autowired
     private PostService postService;
 
-    @GetMapping(value = {"/"})
+    @RequestMapping(value = {"/"})
     public String getHomepage(Model model) {
         List<Post> posts = postService.getAllPosts();
         model.addAttribute("posts", posts);
@@ -48,9 +48,11 @@ public class HomeController {
         Post post = new Post(title, content, new Date().toString());
         postService.addPost(post);
 
-        List<Post> posts = postService.getAllPosts();
-        model.addAttribute("posts", posts);
-        return "index";
+//        List<Post> posts = postService.getAllPosts();
+//        model.addAttribute("posts", posts);
+//        return "index";
+        return "redirect:/";
+
     }
 
     @PostMapping("/post/{id}")
@@ -64,18 +66,22 @@ public class HomeController {
             post.setTitle(title);
             post.setContent(content);
             postService.updatePost(id, post);
-            List<Post> posts = postService.getAllPosts();
-            model.addAttribute("posts", posts);
-            return "index";
+//            List<Post> posts = postService.getAllPosts();
+//            model.addAttribute("posts", posts);
+//            return "index";
+            return "redirect:/";
+
         }else if(action.equals("edit")){
             Optional<Post> postOptional = postService.getPost(id);
             Post post = postOptional.get();
             model.addAttribute("post", post);
             return "posts/updatedPost";
+        }else if (action.equals("delete")) {
+            postService.deletePost(id);
+            return "redirect:/";
         }else {
             return "posts/updatedPost";
         }
-
     }
 
     @GetMapping("/posts/{id}")
@@ -89,12 +95,6 @@ public class HomeController {
             Post post = postOptional.get();
             model.addAttribute("posts", post);
             return "posts/viewpost";
-
-        }else if (action.equals("delete")) {
-            postService.deletePost(id);
-            List<Post> posts = postService.getAllPosts();
-            model.addAttribute("posts", posts);
-            return "index";
 
         }else {
             return "index";
