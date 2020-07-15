@@ -31,27 +31,4 @@ public class Post {
         this.postdate = postdate;
     }
 
-//    public String getTitle() {
-//        return title;
-//    }
-//
-//    public void setTitle(String title) {
-//        this.title = title;
-//    }
-//
-//    public String getContent() {
-//        return content;
-//    }
-//
-//    public void setContent(String content) {
-//        this.content = content;
-//    }
-//
-//    public String getPostdate() {
-//        return postdate;
-//    }
-//
-//    public void setPostdate(String postdate) {
-//        this.postdate = postdate;
-//    }
 }
