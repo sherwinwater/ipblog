@@ -19,7 +19,9 @@ public class Post {
     private Integer id;    // not int
 
     private String title;
-    @Column(columnDefinition = "MEDIUMTEXT")
+//    @Column(columnDefinition = "MEDIUMTEXT")  //for mysql
+    @Column(columnDefinition = "TEXT")  //for PostgreSQL
+//    @Lob
     private String content;
     private String postdate;
 
