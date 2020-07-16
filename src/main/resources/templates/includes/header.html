@@ -1,19 +1,26 @@
-<header  class="header header-grid-container" id="header">
+<header id="header">
+    <div class="header header-grid-container">
         <div style="text-align: left">
             <form th:action="@{/posts/search}" method="get" id="searchform" class="form-inline">
-                <input type="search"  placeholder="search..."
+                <input type="search" placeholder="search..."
                        name="title" aria-label="Search">
                 <button type="submit" style="font-size:12px;border: none;
                 background-color: white;padding: 0;margin: 0">
                     <i class="fa fa-search" style="margin: 0;width: 16px;padding: 0"></i></button>
             </form>
         </div>
-        <div style="text-align: center">
-            <a class="blog-header" th:href="@{/}">管窥一斑 ｜ IP Spots Observations</a>
-        </div>
         <div style="text-align: right" class="blog-header-login">
-<!--            <input type="search" name="ajaxsearch" id="ajaxsearch" placeholder="ajaxsearch..">-->
+            <!--            <input type="search" name="ajaxsearch" id="ajaxsearch" placeholder="ajaxsearch..">-->
             <a th:href="@{/post/new}">Create Post</a>&nbsp;&nbsp;
-            <a th:href="@{/login}" >Sign in</a>
+            <a th:href="@{/login}">Sign in</a>
         </div>
+    </div>
+
+    <div class="blog-home">
+        <h1 style="text-align: center;">
+            <a class="blog-header" style="color: white" th:href="@{/}">管窥一斑 ｜ IP Spots Observations
+            </a></h1>
+        <p>Introduction to Canadian IP and Trade Mark, Observations on real business cases,
+            and Analysis on Canadian regulations and law</p>
+    </div>
 </header>
