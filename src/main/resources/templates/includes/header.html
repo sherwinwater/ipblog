@@ -11,9 +11,21 @@
         <div style="text-align: center">
             <a class="blog-header" th:href="@{/}">管窥一斑 ｜ IP Spots Observations</a>
         </div>
-        <div style="text-align: right" class="blog-header-login">
+        <div style="text-align: right" class="blog-header-login" sec:authorize ="not isAuthenticated()">
 <!--            <input type="search" name="ajaxsearch" id="ajaxsearch" placeholder="ajaxsearch..">-->
             <a th:href="@{/post/new}">Create Post</a>&nbsp;&nbsp;
             <a th:href="@{/login}" >Sign in</a>
         </div>
+
+    <div th:fragment="logout" class="loginuser blog-header-login"
+         sec:authorize="isAuthenticated()" >
+        <span >Hi</span> <span sec:authentication="name">Bob</span><span>!</span>
+        <a th:href="@{/post/new}">Create Post</a>&nbsp;&nbsp;
+        <!--        Roles: <span sec:authentication="principal.authorities">[ROLE_USER, ROLE_ADMIN]</span> |-->
+        <!--/* When using CSRF this needs to be a POST */-->
+        <form th:action="@{/logout}" method="post" style="display:inline" class="form-inline" >
+            <input type="submit" value="Logout" />
+        </form>
+    </div>
+
 </header>

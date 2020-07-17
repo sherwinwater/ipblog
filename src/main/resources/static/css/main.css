@@ -31,10 +31,12 @@ body {
 #header a{
     color: black;
 }
-.blog-header-login a {
+.blog-header-login a,
+.blog-header-login input{
     border: 1px solid #e5e5e5;
     padding: 8px;
     font-size: 80%;
+    background-color: white;
 }
 .header-grid-container {
     display: grid;
@@ -43,6 +45,9 @@ body {
 .blog-header {
     font-family: "Playfair Display", Georgia, "Times New Roman", serif;
     font-size: 1.5rem;
+}
+.loginuser span{
+    font-size: 80%;
 }
 
 .font-italic {
