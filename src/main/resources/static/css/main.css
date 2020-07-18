@@ -34,17 +34,18 @@ body {
 .blog-header-login a,
 .blog-header-login input{
     border: 1px solid #e5e5e5;
-    padding: 8px;
+    padding: 3px;
     font-size: 80%;
     background-color: white;
 }
 .header-grid-container {
     display: grid;
-    grid-template-columns: 25% 50% 25%;
+    grid-template-columns: auto auto;
 }
 .blog-header {
     font-family: "Playfair Display", Georgia, "Times New Roman", serif;
     font-size: 1.5rem;
+    color: white;
 }
 .loginuser span{
     font-size: 80%;
@@ -57,14 +58,8 @@ body {
 .blog-home {
     background-color: #353B40;
     color: white;
-    padding: 15px 15px 15px 25px;
+    padding: 7px 15px 15px 25px;
     margin-bottom: 10px;
-}
-
-.blog-home h1 {
-    font-family: "Playfair Display", Georgia, "Times New Roman", serif;
-    font-style: italic;
-    font-size: 2rem;
 }
 
 .blog-content-paragraph{
@@ -278,4 +273,3 @@ a{
     display: inline-block;
     width: 100px;
 }
-
