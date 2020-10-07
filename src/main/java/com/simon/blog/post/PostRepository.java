@@ -11,4 +11,5 @@ public interface PostRepository
         List<Post> findByContentContainingOrderById(String content);
         List<Post> findByTitleOrContentContainingOrderById(String content,String content2);
         List<Post> findByContentOrTitleContainingIgnoreCase(String content,String content2);
+        List<Post> findAllByOrderByIdDesc();
 }

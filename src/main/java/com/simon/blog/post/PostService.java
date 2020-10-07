@@ -20,7 +20,7 @@ public class PostService {
 
     public List<Post> getAllPosts() {
         List<Post> posts = new ArrayList<>();
-        postRepository.findAll()
+        postRepository.findAllByOrderByIdDesc()
                 .forEach(posts::add);
 
         return posts;
