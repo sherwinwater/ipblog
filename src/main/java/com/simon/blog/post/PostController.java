@@ -21,7 +21,7 @@ public class PostController {
 
     @RequestMapping(value = "/posts/search/{content}")
     public List<Post> getAllPostsBySearch(@PathVariable String content) {
-        return postService.getAllPostsByContent(content);
+        return postService.getAllPostsByTitle(content);
     }
 
     @RequestMapping(value = "/posts/{id}")
