@@ -7,8 +7,8 @@ import java.util.List;
 public interface PostRepository
         extends CrudRepository<Post, Integer > {
 
-        List<Post> findByTitleContainingOrderById(String title);
+        List<Post> findByTitleContainingIgnoreCaseOrderById(String title);
         List<Post> findByContentContainingOrderById(String content);
         List<Post> findByTitleOrContentContainingOrderById(String content,String content2);
-        List<Post> findByContentOrTitleContaining(String content,String content2);
+        List<Post> findByContentOrTitleContainingIgnoreCase(String content,String content2);
 }
