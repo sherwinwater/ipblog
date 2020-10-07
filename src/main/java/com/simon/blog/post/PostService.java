@@ -28,7 +28,7 @@ public class PostService {
 
     public List<Post> getAllPostsByTitle(String title) {
         List<Post> posts = new ArrayList<>();
-        postRepository.findByTitleContainingOrderById(title)
+        postRepository.findByTitleContainingIgnoreCaseOrderById(title)
                 .forEach(posts::add);
 
         return posts;
@@ -43,7 +43,7 @@ public class PostService {
 //        postRepository.findByContentContainingOrderById(content).forEach(posts::add);
 //         postRepository.findByTitleOrContentContainingOrderById(content,content).forEach(posts::add);
 //         postRepository.findByContentOrTitleContaining(content,content).forEach(posts::add);
-         posts = postRepository.findByContentOrTitleContaining(content,content);
+         posts = postRepository.findByContentOrTitleContainingIgnoreCase(content,content);
          for(Post post : posts){
              log.info(post.toString());
          }
