@@ -1,15 +1,15 @@
 <header id="header">
-    <div class="header header-grid-container">
-        <div style="text-align: left">
+    <div class="header header-grid-container row">
+        <div style="text-align: left" class="col-4">
             <form th:action="@{/posts/search}" method="get" id="searchform" class="form-inline">
                 <input type="search" placeholder="search..."
-                       name="title" aria-label="Search">
+                       name="title" aria-label="Search" style="width: 200px;">
                 <button type="submit" style="font-size:12px;border: none;
                 background-color: white;padding: 0;margin: 0">
                     <i class="fa fa-search" style="margin: 0;width: 16px;padding: 0"></i></button>
             </form>
         </div>
-        <div style="text-align: right" class="blog-header-login">
+        <div style="text-align: right" class="blog-header-login col-8">
             <!--            <input type="search" name="ajaxsearch" id="ajaxsearch" placeholder="ajaxsearch..">-->
             <div style="text-align: right" class="blog-header-login" sec:authorize="not isAuthenticated()">
                 <!--            <input type="search" name="ajaxsearch" id="ajaxsearch" placeholder="ajaxsearch..">-->
@@ -28,11 +28,12 @@
         </div>
 
     </div>
+    <br>
+
     <div class="blog-home">
         <h1 style="text-align: center;">
-            <a class="blog-header" style="color: white" th:href="@{/}">管窥一斑 ｜ IP Spots Observations</a>
+            <a class="blog-header" style="color: white" th:href="@{/}">Welcome to Sherwin's Coding Notes</a>
         </h1>
-        <p>Introduction to Canadian IP and Trade Mark, Observations on real business cases,
-            and Analysis on Canadian regulations and law</p>
+        <p class="font-italic">The pieces of coding notes have seen my steps in the coding world. I hope these notes could encourage me move forward with full confidence.</p>
     </div>
 </header>
