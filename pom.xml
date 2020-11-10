@@ -11,7 +11,7 @@
     </parent>
     <groupId>com.simon</groupId>
     <artifactId>blog</artifactId>
-    <version>0.0.1</version>
+    <version>1</version>
     <name>blog</name>
     <description>Demo project for Spring Boot</description>
 
@@ -94,6 +94,23 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
+
+            <plugin>
+                <!-- Build an executable JAR -->
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.1.0</version>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <addClasspath>true</addClasspath>
+                            <classpathPrefix>lib/</classpathPrefix>
+                            <mainClass>somePackage.sample</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
+
         </plugins>
     </build>
 
